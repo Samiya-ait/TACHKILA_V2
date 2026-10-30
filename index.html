@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body class="w-screen h-screen bg-slate-800">
+    <header>
+      <nav
+        class="flex justify-between bg-slate-800 pr-2 pl-2 pb-3 pt-3 border-b text-sm"
+      >
+        <div class="flex gap-1">
+          <img
+            class="bg-white rounded-full max-sm:w-5 max-sm:h-5"
+            width="20"
+            height="20"
+            src="https://img.icons8.com/sf-ultralight/25/football2.png"
+            alt="football2"
+          />
+          <p class="text-white font-bold">TACHKILA</p>
+        </div>
+        <div class="">
+          <ul
+            class="flex gap-3 rounded-lg pr-2 pl-2 border border-#334155 text-white"
+          >
+            <li><a href="index.html">Effectif</a></li>
+            <li><a href="composition.html">Composition</a></li>
+            <li><a href="matchs.html">Matchs</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="flex gap-5">
+            <li class="text-orange-500">GB</li>
+            <li class="text-blue-600">DEF</li>
+            <li class="text-green-600">MIL</li>
+            <li class="text-red-600">ATT</li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="m-3 flex justify-between">
+        <div>
+          <h2 class="text-2xl text-white font-bold">Effectif</h2>
+          <p id="placedCounter" class="m-4 text-sm"></p>
+          <p class="compteur"></p>
+        </div>
+        <button
+          class="bg-green-600 rounded-lg m-4 p-1 w-1/4 font-bold cursor-pointer text-white"
+          id="ajouterBtn"
+        >
+          + Ajouter un joueur
+        </button>
+      </section>
+      <section class="w-screen">
+        <div class="flex w-full p-5 justify-between">
+          <div class="w-3/4 rounded-lg border border-[#334155] bg-white">
+            <input
+              type="search"
+              class="w-3/4 px-4 py-2 text-sm text-gray-900 outline-none placeholder:text-gray-400"
+              placeholder="cherche par le nom du joueur.."
+            />
+
+            <button type="submit" class="" aria-label="Search">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#306263"
+                  d="M21.562,18.733l-2.767-2.767c-0.569-0.569-0.779-1.431-0.465-2.172	c0.588-1.386,0.822-2.957,0.57-4.609c-0.548-3.591-3.422-6.507-7.01-7.075c-5.779-0.915-10.695,4-9.779,9.779	c0.568,3.588,3.484,6.461,7.075,7.01c1.652,0.252,3.223,0.019,4.609-0.57c0.741-0.315,1.603-0.104,2.172,0.465l2.767,2.767	c0.586,0.586,1.536,0.586,2.121,0l0.707-0.707C22.148,20.269,22.148,19.319,21.562,18.733z M4,10.5C4,6.916,6.916,4,10.5,4	S17,6.916,17,10.5S14.084,17,10.5,17S4,14.084,4,10.5z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="text-white flex gap-3">
+            <button class="cursor-pointer">Tous</button>
+            <button class="cursor-pointer">GB</button>
+            <button class="cursor-pointer">DEF</button>
+            <button class="cursor-pointer">MIL</button>
+            <button class="cursor-pointer">ATT</button>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="playerList"></div>
+
+        <!-- MODAL -->
+        <div
+          id="modal"
+          class="invisible bg-slate-700 mr-5 ml-5 p-2 rounded-xl transition duration-500 text-white w-2/4"
+        >
+          <form action="" class="form_pop">
+            <div class="flex justify-between">
+              <h5 class="m-2 font-bold">Ajouter Un joueur</h5>
+              <button class="btn-croix" type="button">&times;</button>
+            </div>
+            <div>
+              <label for="name" class="m-2 text-xs"> Nom Complet</label>
+              <input
+                id="name"
+                type="text"
+                placeholder="name"
+                class="outline-blue-600 bg-slate-800 rounded-md m-2 mb-4 width-full"
+              />
+              <p class="mssg" id="errName"></p>
+            </div>
+            <div class="flex">
+              <div>
+                <label for="age" class="m-2 text-xs">age:</label>
+                <input
+                  type="number"
+                  id="age"
+                  placeholder="age de joueur..."
+                  class="outline-blue-600 bg-slate-800 rounded-md m-2 mb-4 width-full"
+                />
+              </div>
+              <div>
+                <label for="état" class="m-2 text-xs">état:</label>
+                <select name="état" id="état">
+                  <option value="en_forme">en forme</option>
+                  <option value="blesse">blessé</option>
+                </select>
+              </div>
+            </div>
+            <div class="m-2 mb-4">
+              <label for="" class="text-xs mb-10">Poste:</label>
+              <div class="modal-posts">
+                <label for="gardien"
+                  ><input
+                    type="radio"
+                    id="gardien"
+                    value="gardien"
+                    name="poste"
+                  />Gardien</label
+                >
+
+                <label for=""
+                  ><input
+                    type="radio"
+                    id="defenseur"
+                    value="defenseur"
+                    name="poste"
+                  />Défenseur</label
+                >
+
+                <label for="">
+                  <input
+                    type="radio"
+                    id="milieu"
+                    value="milieu"
+                    name="poste"
+                  />Milieu</label
+                >
+
+                <label for=""
+                  ><input
+                    type="radio"
+                    id="Attaquant"
+                    value="Attaquant"
+                    name="poste"
+                  />Attaquant</label
+                >
+                <p class="mssg" id="errpost"></p>
+              </div>
+            </div>
+            <div class="m-2 m-4">
+              <label for="num" class="text-xs">Numéro(1 à 99)</label>
+              <input
+                id="num"
+                placeholder="Number"
+                class="number outline-blue-600 bg-slate-800 rounded-md width-full"
+                type="number"
+                max="99"
+                min="1"
+              />
+              <p class="mssg" id="errNb"></p>
+            </div>
+            <div id="modal-btn" class="flex justify-end gap-5">
+              <button
+                class="btn-annuler bg-slate-800 rounded-lg p-1 cursor-pointer"
+                type="button"
+              >
+                Annuler
+              </button>
+              <button
+                class="btn-ajouter bg-green-600 rounded-lg p-1 cursor-pointer"
+                type="submit"
+              >
+                Ajouter
+              </button>
+            </div>
+            <p class="mssg" id="err_form"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="js/page_effectif.js"></script>
+  </body>
+</html>
