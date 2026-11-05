@@ -1,29 +1,25 @@
 # TACHKILA_V2
-1. Update your feature branch with dev
-git fetch origin
-git checkout feat/tracability2
-git pull origin feat/tracability2
-git merge origin/dev
+
+Une application web interactive...
+
+## Technologies Utilisées
+* **HTML5** 
+* **Tailwind CSS** 
+* **JavaScript (DOM)** 
 
 
-This brings the latest dev changes into your feature branch while preserving your work.
-2. Resolve conflicts if necessary
-If Git reports conflicts, resolve them in the affected files, then run:
-git add .
-git commit
+## Fonctionnalités Implémentées
+
+### 1.
+### 2.
+### 3.
 
 
-If Git completes the merge automatically, you don't need to run git commit manually.
-3. Push your feature branch
-git push origin feat/tracability2
+##  Planification du Projet
+ [TACHKILA2 - Planification Jira](https://gym09.atlassian.net/jira/software/projects/TAC/boards/2?sprintStarted=true&filter=&groupBy=none)
 
+##  Présentation
+ [TACHKILA2 - presentation](https://canva.link/tqavn60cmoc8cei)
 
-4. Merge your feature branch into dev
-Switch to dev and update it first:
-git checkout dev
-git pull origin dev
-git merge feat/tracability2
-
-
-Then push the updated dev branch:
-git push origin dev
+##  démo-VERCEL
+[demo](https://tachkilav2-theta.vercel.app/)
