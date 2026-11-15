@@ -8,14 +8,17 @@ L'application offre une interface interactive pour gérer les joueurs, composer 
 * **LocalStorage** 
 * **ES6 Modules** 
 ## Structure du projet JavaScript
+```text
 TACHKILA_V2/
 │
 ├── js/
 │   ├── data.js
 │   ├── effectif.js
 │   └── functions.js
+│
 ├── index.html
 └── README.md
+```
 ## Fonctionnalités Implémentées
 
 * 1.Affichage des joueurs sous forme de cartes contenant leur numéro, nom, poste, âge et statut (En forme / Blessé).
